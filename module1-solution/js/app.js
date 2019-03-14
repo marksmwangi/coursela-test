@@ -1,8 +1,10 @@
 (function(){
+  'use strict';
 // Create a new module
 var myAppModule = angular.module('LunchCheck', []);
 // configure the module with a controller
 myAppModule.controller("LunchCheckController", LunchCheckController);
+LunchCheckController.$inject =['$scope'];
 
 function LunchCheckController($scope,$filter) {
     $scope.message = "";
@@ -28,7 +30,7 @@ if(lunchMenu.length == 0){
 };
 function CheckIfEmpty(){
   var EmptyValueArray = [];
-  for(i=0;i<$scope.lunchMenuArray.length;i++) {
+  for(var i=0;i<$scope.lunchMenuArray.length;i++) {
   if ($scope.lunchMenuArray[i].length == 0 ) {
     EmptyValueArray[EmptyValueArray.length] = $scope.lunchMenuArray[i];
   }
