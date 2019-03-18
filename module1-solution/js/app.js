@@ -12,6 +12,9 @@ function LunchCheckController($scope,$filter) {
     $scope.emptyspacewithComas = 0;
     $scope.CheckIfTooMuch = function(){
   var lunchMenu =  $scope.lunchMenu ;
+  if($scope.lunchMenu === undefined){
+    lunchMenu = "";
+  }
 var lunchMenuArray = lunchMenu.split(',');
 $scope. lunchMenuArray = lunchMenuArray;
 var foodLength = lunchMenuArray.length;
